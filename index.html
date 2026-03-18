@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shaz GA4-GTM Practice</title>
+  <title>Shaz Website</title>
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -12,6 +12,90 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-582DKZP4');</script>
   <!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    header, section, footer {
+      max-width: 900px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    header {
+      background: white;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    section {
+      background: white;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    .button-group {
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      margin: 8px 8px 0 0;
+      text-decoration: none;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      background: #111;
+      color: white;
+    }
+
+    .btn.secondary {
+      background: #e5e5e5;
+      color: #111;
+    }
+
+    .card {
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-top: 12px;
+      background: #fafafa;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -19,9 +103,72 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <h1>Shaz GA4-GTM Practice</h1>
-  <p>Hello. This is my free GitHub website.</p>
+  <header>
+    <h1>Shaz GTM Practice Site</h1>
+    <p>This is my simple website for learning GTM and GA4.</p>
 
-  <button id="testButton">Click me</button>
+    <div class="button-group">
+      <button id="heroButton" class="btn">Main Button</button>
+      <button id="learnMoreButton" class="btn secondary">Learn More</button>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About This Site</h2>
+    <p>This page helps me practice buttons, links, downloads, and forms so I can learn tracking properly.</p>
+  </section>
+
+  <section id="links">
+    <h2>Useful Links</h2>
+
+    <div class="card">
+      <p><a id="internalAboutLink" href="#about">Go to About section</a></p>
+      <p><a id="googleLink" href="https://www.google.com" target="_blank" rel="noopener noreferrer">Visit Google</a></p>
+      <p><a id="githubLink" href="https://github.com" target="_blank" rel="noopener noreferrer">Visit GitHub</a></p>
+    </div>
+  </section>
+
+  <section id="downloads">
+    <h2>Downloads</h2>
+
+    <div class="card">
+      <p><a id="downloadPdf" href="files/sample-guide.pdf" download>Download Sample PDF</a></p>
+      <p><a id="downloadTxt" href="files/checklist.txt" download>Download Checklist TXT</a></p>
+      <p><a id="downloadImage" href="files/practice-image.jpg" download>Download Practice Image</a></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Form</h2>
+
+    <form id="contactForm">
+      <input type="text" id="nameField" name="name" placeholder="Your name" required />
+      <input type="email" id="emailField" name="email" placeholder="Your email" required />
+      <textarea id="messageField" name="message" rows="5" placeholder="Your message" required></textarea>
+      <button type="submit" id="submitButton" class="btn">Send Message</button>
+    </form>
+
+    <p id="formMessage" style="margin-top:12px; font-weight:bold;"></p>
+  </section>
+
+  <footer>
+    <p>Made by Shaz for GTM practice.</p>
+    <p><a id="footerLink" href="https://analytics.google.com/" target="_blank" rel="noopener noreferrer">Open Google Analytics</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("heroButton").addEventListener("click", function() {
+      alert("Main Button clicked");
+    });
+
+    document.getElementById("learnMoreButton").addEventListener("click", function() {
+      window.location.href = "#links";
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("formMessage").textContent = "Form submitted successfully!";
+    });
+  </script>
 </body>
 </html>
