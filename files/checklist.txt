@@ -1,0 +1,6 @@
+My GA4 Practice Checklist
+- Open website
+- Click button
+- Click link
+- Download file
+- Submit form
